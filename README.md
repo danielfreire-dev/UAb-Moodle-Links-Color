@@ -1,33 +1,31 @@
-# My Awesome Project
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+# UAB Moodle - Links Azuis Sublinhados
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+Um _userscript_ que restaura o estilo padrão de _links_ azuis e sublinhados no [elearning.uab.pt](https://elearning.uab.pt/), que foi alterado por uma atualização do tema.
 
-![alt tag](http://placecorgi.com/1200/650)
+**Link para o projeto:** [Greasy Fork](https://greasyfork.org/en/scripts/596337-uab-moodle-blue-underlined-links)
 
-## How It's Made:
+<!-- ![captura de ecrã](https://placecorgi.com/1200/650) -->
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+## Como Foi Feito:
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+**Tecnologias usadas:** JavaScript, CSS (injetado via GM_addStyle), UserScript (metadados)
 
-## Optimizations
-*(optional)*
+Este projeto nasceu de uma necessidade simples: o tema Moodle da UAB alterou a cor e o sublinhado dos links, tornando-os visualmente confusos. Depois de inspecionar o tema Boost com as DevTools do navegador, identifiquei os seletores CSS que estavam a ganhar a guerra de especificidade. A solução foi criar uma userscript que injeta uma folha de estilo com `html body a` e `!important` para garantir que as regras se sobrepõem a qualquer estilo do tema. Também tratei dos `<span>` internos (como o `.instancename` do Moodle) e deixei a barra de navegação superior intacta para não afetar o aspeto geral.
 
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+## Otimizações
 
-## Lessons Learned:
+A maior otimização foi limitar o âmbito das regras. Em vez de aplicar `color: blue` a tudo, usei seletores específicos que atingem apenas os links e os seus descendentes diretos. Também removi o `border-bottom` que o tema usava como sublinhado em alguns links, evitando que aparecessem dois sublinhados sobrepostos. O resultado é uma solução leve, sem quebras de layout e que respeita o resto do design do Moodle.
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *wow I actually did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+## Lições Aprendidas:
 
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
+Este projeto ensinou-me bastante sobre especificidade em CSS e como os temas de CMS (como o Moodle) podem ser teimosos. Aprendi a usar as DevTools para diagnosticar conflitos de estilos, a escrever metadados de userscript corretamente e a publicar e manter o código no GreasyFork e no GitHub. Acima de tudo, percebi que uma solução bem documentada e com um README claro faz toda a diferença para quem a vai instalar.
 
-**Palettable:** https://github.com/alecortega/palettable
+## Exemplos:
 
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
+Visite o meu portfólio:
 
-**Patch Panel:** https://github.com/alecortega/patch-panel
+**Portfólio:** [https://daniel-freire.com](https://daniel-freire.com/?utm_source=greasyfork-github)
 
+---
 
-
+Este projeto está licenciado sob a Licença MIT - veja o ficheiro [LICENSE](LICENSE) para mais detalhes.
