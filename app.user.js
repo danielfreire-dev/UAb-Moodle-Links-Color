@@ -1,10 +1,7 @@
 // ==UserScript==
 // @name         UAB eLearning - Blue Underlined Links
-// @namespace    http://tampermonkey.net/
-// @version      1.3
 // @description  Force all Moodle links (and their inner spans) to be blue and underlined
 // @author       Daniel Freire
-// @homepageURL  https://daniel-freire.com/?utm_source=greasyfork
 // @match        https://elearning.uab.pt/*
 // @grant        GM_addStyle
 // @version      1.0
